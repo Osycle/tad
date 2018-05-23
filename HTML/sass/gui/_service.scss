@@ -1,0 +1,66 @@
+/*------------------------------------------------------------------
+  	[Service]
+------------------------------------------------------------------*/
+
+.service {
+	background-color: $color-white;
+	padding: 30px;
+	transition: all 0.3s ease;
+	border: 1px solid rgba(gray, 0.1);
+	box-shadow: 0 5px 15px -5px rgba(#000, 0.1);
+	.service-element,
+	.service-info {
+		@include translate3d(0,0,0);
+		@include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+	}
+
+	.service-icon {
+		display: block;
+		@include font($size: 30px);
+		color: $color-link-hover;
+		margin-bottom: 30px;
+	}
+
+	&:hover {
+		background-color: rgba($color-base, 0.9);
+		box-shadow: 0 5px 15px -5px rgba(#000, 0.8);
+		p{
+			color: white;
+		}
+		.service-element {
+			opacity: 0;
+			//@include translate3d(0,-100%,0);
+			@include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+		}
+
+		.service-info {
+			//@include translate3d(0,-30%,0);
+			@include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+		}
+	}
+
+	.service-info{
+		position: relative;
+		z-index: 1;
+		p{
+			//font-size: 0.95em;
+		}
+		&:hover{
+
+		}
+	}
+}
+.hover-content{
+
+	.cell-hover{
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		transition: all 0.3s ease;
+	}
+	&:hover{
+		.cell-hover{
+			opacity: 0.1 !important;
+		}
+	}
+}
